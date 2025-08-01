@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import hello_router
+from app.routers import hello_router, jinja_router
 
 # Create FastAPI instance
 app = FastAPI(
@@ -10,6 +10,7 @@ app = FastAPI(
 
 # Include routers
 app.include_router(hello_router.router, prefix="/api/v1")
+app.include_router(jinja_router.router, prefix="/api/v1")
 
 # Root endpoint
 @app.get("/")
