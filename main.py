@@ -1,15 +1,14 @@
 from fastapi import FastAPI
-from app.routers import hello_router, jinja_router
+from app.routers import jinja_router
 
 # Create FastAPI instance
 app = FastAPI(
-    title="Hello World Microservice",
-    description="A simple FastAPI microservice with routers and controllers",
+    title="Jinja Templating Microservice",
+    description="FastAPI microservice for HTML templating and creating PDF documents",
     version="1.0.0"
 )
 
 # Include routers
-app.include_router(hello_router.router, prefix="/api/v1")
 app.include_router(jinja_router.router, prefix="/api/v1")
 
 # Root endpoint
